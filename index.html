@@ -11,6 +11,10 @@
 
     <div id="time"></div>
 <script type="text/javascript">
+console.log("test");
+var h = today.getHours();
+var m = today.getMinutes();
+var s = today.getSeconds();
 
 function pause (){
   if (h==10 && m==30){
@@ -28,14 +32,15 @@ function checkTime(i) {
 
 function startTime() {
  var today = new Date();
- var h = today.getHours();
- var m = today.getMinutes();
- var s = today.getSeconds();
+  h = today.getHours();
+  m = today.getMinutes();
+  s = today.getSeconds();
  // add a zero in front of numbers<10
  m = checkTime(m);
  s = checkTime(s);
  document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
  t = setTimeout(function() {
+   pause()
    startTime()
  }, 500);
 }
