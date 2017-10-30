@@ -3,11 +3,46 @@
   <head>
     <meta charset="utf-8">
     <title>La Pause Hetic</title>
-      <h1>Est-ce que c'est la pause ?</h1>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
+
+    <h1>Est-ce que c'est la pause ?</h1>
+
+    <div id="time"></div>
 <script type="text/javascript">
- alert('test');
+
+function pause (){
+  if (h==10 && m==30){
+    console.log("la pause");
+  }else {
+    console.log("pas la pause");
+  }
+}
+function checkTime(i) {
+ if (i < 10) {
+   i = "0" + i;
+ }
+ return i;
+}
+
+function startTime() {
+ var today = new Date();
+ var h = today.getHours();
+ var m = today.getMinutes();
+ var s = today.getSeconds();
+ // add a zero in front of numbers<10
+ m = checkTime(m);
+ s = checkTime(s);
+ document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+ t = setTimeout(function() {
+   startTime()
+ }, 500);
+}
+startTime();
+
+
+
 </script>
   </body>
 </html>
