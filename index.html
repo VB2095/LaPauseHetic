@@ -11,11 +11,12 @@
 
     <div id="time"></div>
 <script type="text/javascript">
-console.log("test");
+function startTimes() {
 var h = today.getHours();
 var m = today.getMinutes();
 var s = today.getSeconds();
-
+var today = new Date();
+};
 function pause (){
   if (h==10 && m==30){
     console.log("la pause");
@@ -31,7 +32,7 @@ function checkTime(i) {
 }
 
 function startTime() {
- var today = new Date();
+  today = new Date();
   h = today.getHours();
   m = today.getMinutes();
   s = today.getSeconds();
